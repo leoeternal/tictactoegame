@@ -1,0 +1,14 @@
+<%- include('partials/header.ejs') -%>
+
+<center>
+    <br>
+    <% if(status==false){ %>
+         <font color="red"><p><%= message %></p></font>
+    <% } %>
+<form action="/create/user" method="POST">
+    <input type="text" name="username" placeholder="Enter your name">
+    <button class="btn btn-danger">Submit</button>
+</form>
+</center>
+
+<%- include('partials/footer.ejs') -%>

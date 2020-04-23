@@ -1,0 +1,19 @@
+<%- include('partials/header.ejs') -%>
+<br>
+<center>
+    <h1>Create a room or join an existing room</h1><br><br>
+    <% if(statusroom==false){ %>
+        <font color="red"><p><%= message %></p></font>
+   <% } %>
+<form action="/create/room/<%= userCreated._id %>/<%=  userCreated.username%>" method="POST">
+    <input type="text" name="roomname" placeholder="Enter room name">
+    <button class="btn btn-primary">Create Room</button> 
+</form>
+<hr>
+<form action="/join/room/<%= userCreated._id %>/<%=  userCreated.username%>" method="POST">
+    <input type="text" name="roomname" placeholder="Enter room name">
+    <button class="btn btn-primary">Join Room</button> 
+</form>
+</center>
+
+<%- include('partials/footer.ejs') -%>

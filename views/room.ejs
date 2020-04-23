@@ -1,0 +1,14 @@
+<%- include('partials/header.ejs') -%>
+
+
+<center>
+    <h4>Room  - <%= roomCreated.roomname %></h4>
+<% if(roomCreated.usertwoCount==0)
+{ %>
+   <h1>You have to wait for the second player to join.</h1>
+<% }else{ %>
+   <h1>Welcome <%= roomCreated.userone.username %> and <%=roomCreated.usertwo.username %></h1>
+<% } %>
+<%= roomCreated %>
+</center>
+<%- include('partials/footer.ejs') -%>
