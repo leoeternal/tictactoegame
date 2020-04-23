@@ -2,13 +2,31 @@
 
 
 <center>
-    <h4>Room  - <%= roomCreated.roomname %></h4>
+    <h4>Room Name  - <%= roomCreated.roomname %></h4>
 <% if(roomCreated.usertwoCount==0)
 { %>
    <h1>You have to wait for the second player to join.</h1>
 <% }else{ %>
    <h1>Welcome <%= roomCreated.userone.username %> and <%=roomCreated.usertwo.username %></h1>
-<% } %>
-<%= roomCreated %>
+<div class="game">
+    <div class="game-title" contenteditable="true">Tic Tac Toe</div>
+    <div class="player" contenteditable="true">
+    <%= roomCreated.userone.username %>
+    <div style="font-size:30pt;" id="player1" class="selected" contenteditable="true">
+    0
+    </div>
+    </div>
+    
+    <table id="game" class="tictactoe" style="float:left;width:45%;" contenteditable="true">
+    </table>
+    
+    <div class="player" contenteditable="true">
+    <%= roomCreated.usertwo.username %>
+    <div id="player2" style="font-size:30pt;" contenteditable="true">0</div>
+    </div>
+    
+    <div class="clear" contenteditable="true"></div>
+    </div>
+    <% } %>
 </center>
 <%- include('partials/footer.ejs') -%>
